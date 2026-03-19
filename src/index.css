@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #fadd30;
+  --color-primary-dim: #ebce1e;
+  --color-primary-container: #e2c60f;
+  --color-on-primary: #5b4e00;
+  --color-on-primary-container: #4a4000;
+
+  --color-secondary: #00e3fd;
+  --color-secondary-dim: #00d4ec;
+  --color-secondary-container: #006875;
+  --color-on-secondary: #004d57;
+  --color-on-secondary-container: #e8fbff;
+
+  --color-tertiary: #dcfe7a;
+  --color-tertiary-dim: #c0e161;
+  --color-tertiary-container: #cef06d;
+  --color-on-tertiary: #4c6200;
+  --color-on-tertiary-container: #455900;
+
+  --color-background: #0c0e11;
+  --color-surface: #0c0e11;
+  --color-surface-dim: #0c0e11;
+  --color-surface-bright: #292c31;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #111417;
+  --color-surface-container: #171a1d;
+  --color-surface-container-high: #1d2024;
+  --color-surface-container-highest: #23262a;
+
+  --color-on-surface: #f9f9fd;
+  --color-on-surface-variant: #aaabaf;
+  --color-outline: #747579;
+  --color-outline-variant: #46484b;
+
+  --color-error: #ff7351;
+  --color-on-error: #450900;
+  --color-error-container: #b92902;
+  --color-on-error-container: #ffd2c8;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+    background-image: radial-gradient(circle at 50% 50%, #171a1d 0%, #0c0e11 100%);
+  }
+}
+
+.glass-panel {
+  @apply backdrop-blur-xl bg-surface-container-low/70 border border-white/5;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes token-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(220, 254, 122, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 254, 122, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 254, 122, 0); }
+}
+
+.token-pulse {
+  animation: token-pulse 2s infinite;
+}
